@@ -1,0 +1,861 @@
+$font: 'PT Sans', sans-serif
+$fontSize: 16px
+$fontColor: #323245
+$bodyBg: #f0f2f3
+$sprite: url(../img/sprite.png)
+$containerWidth: 1024px
+$colorWhite: #fff
+$colorGrey: #ebeae9
+$colorBlue: #1287bd
+
+*,
+*:before,
+*:after
+	box-sizing: border-box
+
+body
+	font-family: $font
+	font-size: $fontSize
+	color: $fontColor
+	background: $bodyBg
+
+.clearfix:before,
+.clearfix:after,
+.container:before,
+.container:after,
+.row:before,
+.row:after
+	content: ""
+	display: table
+	clear: both
+
+.row
+	margin: 0
+	padding: 0
+
+.container
+	width: $containerWidth
+	margin: 0 auto
+	padding: 0
+
+.col
+	margin: 0
+	padding: 0
+	float: left
+	&.col-right
+		float: right
+
+.bold
+	font-weight: bold
+
+h1, .h1
+	margin: 0 0 36px 0
+	padding: 0
+	font-size: 25px
+	text-transform: uppercase
+	letter-spacing: 1.6px
+	line-height: 24px
+
+.download-btn
+	position: relative
+	margin: 0
+	padding: 0 55px 0 15px
+	display: block
+	border: 0
+	border-radius: 0
+	box-shadow: none
+	outline: 0
+	width: 274px
+	height: 55px
+	line-height: 51px
+	background: $fontColor
+	font-size: 18px
+	font-weight: normal
+	color: $colorWhite
+	text-decoration: underline
+	letter-spacing: -0.05px
+	&:hover
+		text-decoration: none
+	&.download-price-btn:after, &.show-certificate-btn:after
+		content: ''
+		position: absolute
+		right: 15px
+		top: 10px
+		display: block
+		margin: 0
+		padding: 0
+		background-image: $sprite
+		background-repeat: no-repeat
+	&.show-certificate-btn:after
+		right: 14px
+		background-position: -112px 0
+		width: 27px
+		height: 36px
+	&.download-price-btn
+		background: $colorBlue
+		&:after
+			background-position: -142px 0
+			width: 32px
+			height: 34px
+
+header
+	margin: 0
+	padding: 0
+	background: $colorWhite
+	font-size: 15px
+
+	.container
+		padding: 0 30px
+
+	.top-line
+		background: $colorGrey
+		padding: 14px 0 15px 0
+
+		.phone, .address
+			float: right
+			a:hover
+				text-decoration: underline
+
+			&:before
+					content: ''
+					display: inline-block
+					vertical-align: middle
+					margin: -2px 2px 0 0
+					padding: 0
+					background-image: $sprite
+					background-repeat: no-repeat
+
+		.phone
+			a
+				color: $fontColor
+				font-weight: bold
+				text-decoration: none
+
+			&:before
+				background-position: -15px -3px
+				width: 13px
+				height: 16px
+
+		.address
+			margin-right: 24px
+			a
+				color: $fontColor
+				text-decoration: none
+
+			&:before
+				background-position: -3px -3px
+				width: 10px
+				height: 14px
+				margin-right: 6px
+
+	.bottom-line
+		.logo
+			display: block
+			width: 211px
+			height: 106px
+			margin: -36px 0 0 1px
+			padding: 0
+			float: left
+			background: url(../img/logo.png) 0 0 no-repeat
+
+		.top-menu
+			float: right
+			margin: 52px 0 0 0
+			padding: 0 0 16px 0
+
+			ul
+				margin: 0
+				padding: 0
+				list-style: none
+
+				li
+					margin: 0 0 0 24px
+					padding: 0
+					list-style: none
+					float: left
+
+					a
+						font-size: 15px
+						color: $fontColor
+						text-decoration: none
+						text-transform: uppercase
+
+						&.active, &:hover
+							font-weight: bold
+							color: $colorBlue
+
+.top-slider
+	position: relative
+	z-index: 20
+	margin: 0
+	padding: 0
+	overflow: hidden
+
+	.slick-track
+		overflow: hidden
+
+		.item
+			width: 100%
+			height: 436px
+			float: left
+
+			.slide-img
+				width: 100%
+				height: 100%
+				background-color: transparent
+				background-position: center center
+				background-repeat: no-repeat
+				background-size: 2500px
+				transition: all 7s linear;
+
+			&.slide-zoom .slide-img
+				background-size: 1920px
+
+	.slick-dots
+		width: 1024px
+		height: 0
+		overflow: visible
+		margin: 0 0 0 -512px
+		padding: 0 30px 0 0
+		list-style: none
+		position: absolute
+		top: 214px
+		left: 50%
+		z-index: 1000
+		text-align: right
+
+		li
+			display: inline-block
+			margin: 0 0 0 8px
+			padding: 0
+
+			button
+				margin: 0
+				padding: 0
+				text-indent: -9999px
+				border: 0
+				outline: 0
+				box-shadow: none
+				width: 8px
+				height: 7px
+				background: $colorWhite
+				opacity: 0.7
+
+			&.slick-active button, & button:hover
+				background: $colorBlue
+				cursor: pointer
+
+	.container
+		padding: 76px 0 0 83px
+
+	.slide-title
+		font-size: 45px
+		line-height: 42px
+		color: $colorWhite
+
+	.more-btn
+		margin: 19px 0 0 3px
+		padding: 0
+		display: inline-block
+		color: $colorWhite
+		font-size: 20px
+		width: 197px
+		height: 43px
+		line-height: 33px
+		text-align: center
+		border: 3px solid $colorWhite
+		text-decoration: none
+
+.about-work-text
+	margin: -190px 0 0 0
+	padding: 0
+	position: relative
+	z-index: 1000
+
+	.container
+		height: 190px
+		background: rgba(18,135,189,0.88)
+		padding: 19px 30px 0 30px
+		color: $colorWhite
+
+		.col
+			width: 29%
+			margin-left: 6%
+
+			&:first-child
+				width: 32.5%
+				margin-left: 0
+
+			&:nth-child(2)
+				margin-left: 3.5%
+
+			.title
+				margin-bottom: 1px
+				font-size: 20px
+				font-weight: bold
+				text-transform: uppercase
+				letter-spacing: 1.5px
+				line-height: 20px
+
+			.text
+				font-size: 15px
+				line-height: 19px
+
+footer
+	margin: 0
+	padding: 0
+	background: #fff
+	font-size: 15px
+
+	.container
+		padding: 22px 30px
+
+		.col
+			&.item-1
+				width: 345px
+			
+			&.item-2
+				width: 233px
+			
+			&.item-3
+				width: 230px
+			
+			&.item-4
+				float: right
+
+		.copyright
+			font-size: 15px
+			font-weight: bold
+
+		.phone, .address, .email
+			a:hover
+				text-decoration: underline
+			&:before
+					content: ''
+					display: inline-block
+					vertical-align: middle
+					margin: -2px 2px 0 0
+					padding: 0
+					background-image: $sprite
+					background-repeat: no-repeat
+
+		.phone
+			margin-top: 27px
+			a
+				color: $fontColor
+				font-weight: bold
+				text-decoration: none
+
+			&:before
+				background-position: -15px -3px
+				width: 13px
+				height: 16px
+				margin-right: 5px
+
+		.address
+			margin-top: 8px
+			a
+				color: $fontColor
+				text-decoration: none
+			&:before
+				background-position: -3px -3px
+				width: 10px
+				height: 14px
+				margin-right: 6px
+		
+		.email
+			margin-top: 27px
+			a
+				color: $fontColor
+				font-weight: bold
+				text-decoration: none
+			&:before
+				background-position: -31px -3px
+				width: 16px
+				height: 12px
+				margin-right: 7px
+
+		.site-design-copy
+			margin-top: 12px
+			font-size: 14.5px
+
+			&:after
+				content: ''
+				display: block
+				margin: 2px 0 0 0
+				padding: 0
+				background-image: $sprite
+				background-repeat: no-repeat
+				background-position: -3px -22px
+				width: 86px
+				height: 12px
+
+.content-home-page
+	margin: 0
+	padding: 0
+	.container
+		.text-note-wrapper
+			margin: 0
+			padding: 29px 120px 29px 116px
+			font-size: 21px
+			line-height: 26px
+			letter-spacing: -0.07px
+			.text
+				position: relative
+				&:before
+					content: ''
+					display: block
+					position: absolute
+					left: -21px
+					top: 7px
+					width: 3px
+					height: calc(100% - 11px)
+					background: #91929c
+				&:after
+					content: ''
+					display: block
+					position: absolute
+					left: -46px
+					top: 7px
+					background: $sprite
+					background-repeat: no-repeat
+					background-position: -50px 0
+					width: 28px
+					height: 19px
+				&.blue-flag:after
+					background-position: -81px 0
+.services-list
+	margin: 2px 0 6px 0
+	padding: 0
+	display: flex
+	flex-direction: row
+	flex-wrap: wrap
+	align-items: flex-start
+	justify-content: space-between
+	.item
+		display: block
+		float: left
+		margin: 11px 0
+		padding: 20px 31px
+		width: 33%
+		height: 300px
+		background: $colorWhite
+		text-decoration: none
+		color: $fontColor
+		font-size: 15px
+		.title
+			font-weight: bold
+			text-transform: uppercase
+			letter-spacing: 1.2px
+			margin-bottom: 14px
+			&:hover
+				text-decoration: underline
+		.img
+			text-align: center
+			margin-bottom: 12px
+			img
+				max-width: 100%
+				backface-visibility: hidden
+		.short-description
+			line-height: 19px
+			text-decoration: underline
+			&:hover
+				text-decoration: none
+.news-list-wrapper
+	margin: 20px 0
+	padding: 0
+	.news-list-home
+		margin: 0
+		padding: 18px 31px 17px 31px
+		width: 336px
+		background: $colorWhite
+		.title
+			font-size: 20px
+			text-transform: uppercase
+			font-weight: bold
+			letter-spacing: 1.6px
+			margin-bottom: 23px
+		.news-items
+			.item
+				margin: 35px 0 0 0
+				padding: 0
+				display: block
+				text-decoration: none
+				color: $fontColor
+				&:first-child
+					margin-top: 0
+				.date
+					margin: 0
+					padding: 0
+					color: $colorWhite
+					font-size: 15px
+					font-weight: bold
+					> span
+						display: inline-block
+						background: $fontColor
+						padding: 1px 4px 3px 4px
+				.img
+					margin: 10px 0 6px 0
+					padding: 0
+					text-align: center
+					img
+						max-width: 100%
+						backface-visibility: hidden
+				.short-description
+					line-height: 19px
+					margin: 4px 0 0 0
+					padding: 0
+					font-size: 15px
+					text-decoration: underline
+					&:hover
+						text-decoration: none
+		.show-all-news
+			margin: 21px 0 0 0
+			padding: 0
+			a
+				font-size: 15px
+				font-weight: bold
+				text-decoration: underline
+				color: $fontColor
+				&:hover
+					text-decoration: none
+.convenient-to-work
+	margin: 0
+	padding: 0
+	width: 683px
+	height: 622px
+	float: right
+	background: url(../img/convenient-to-work-bg.jpg) left top no-repeat
+	.text-wrapper
+		margin: 170px 32px 0 0
+		padding: 16px 16px 13px 16px
+		width: 306px
+		float: right
+		background: $colorWhite
+		.title
+			margin: 0 0 13px 0
+			padding: 0 15px
+			font-size: 25px
+			font-weight: bold
+			text-transform: uppercase
+			line-height: 25px
+			letter-spacing: 1.6px
+		.text
+			margin: 0 0 24px 0
+			padding: 0 15px
+			line-height: 20px
+		.show-certificate-btn
+			margin-bottom: 10px
+.plus-items-home
+	margin: 29px 0 0 0
+	padding: 28px 30px 26px 30px
+	background: #2d94c4
+	color: $colorWhite
+	font-size: 15px
+	.col
+		width: 33%
+		margin-left: 3%
+		&:first-child
+			margin-left: 0
+		&.item-3
+			width: 29%
+			margin-left: 2%
+		.title
+			margin-bottom: 0
+			font-size: 20px
+			font-weight: bold
+			text-transform: uppercase
+			letter-spacing: 1.5px
+		.text
+			line-height: 19px
+.content-inset-page
+	position: relative
+	margin: -321px 0 50px 0
+	padding: 0
+	z-index: 40
+	> .container
+		padding: 30px 30px 20px 30px
+		min-height: 590px
+		background: $colorWhite
+		> .col-left
+			width: 274px
+			img
+				max-width: 100%
+				margin-bottom: 11px
+		> .col-right
+			width: 618px
+		p
+			margin: 0 0 30px 0
+			padding: 0
+			line-height: 20px
+			a
+				color: inherit
+				text-decoration: underline
+				&:hover
+					text-decoration: none
+		.important-text
+			font-size: 21px
+			p
+				margin-bottom: 28px
+				line-height: 26px
+		.employees-list
+			margin: 0 0 -61px -346px
+			padding: 6px 0 0 0
+			.items
+				margin: 0
+				padding: 0
+				display: flex
+				flex-direction: row
+				flex-wrap: wrap
+				align-items: flex-start
+				justify-content: space-between
+				.item
+					margin: 0 0 43px 0
+					padding: 0
+					width: 274px
+					.name
+						margin-top: 4px
+						font-size: 15px
+		.certificates-list
+			margin: 0 0 0 -346px
+			padding: 6px 0 0 0
+			display: flex
+			flex-direction: row
+			flex-wrap: wrap
+			align-items: flex-start
+			justify-content: space-between
+			img
+				display: block
+				margin: 0 0 24px 0
+				padding: 0
+		.phone, .email
+			margin: 0 0 12px 3px
+			padding: 0
+			&:before
+				content: ''
+				display: inline-block
+				vertical-align: middle
+				margin: -2px 2px 0 0
+				padding: 0
+				background-image: $sprite
+				background-repeat: no-repeat
+
+		.phone
+			a
+				color: $fontColor
+				font-weight: bold
+				text-decoration: none
+
+			&:before
+				background-position: -15px -3px
+				width: 13px
+				height: 16px
+				margin-right: 11px
+		
+		.email
+			a
+				color: $fontColor
+				font-weight: bold
+				text-decoration: none
+			&:before
+				background-position: -31px -3px
+				width: 16px
+				height: 12px
+				margin-right: 9px
+		.fs15
+			font-size: 15px
+			p
+				margin-bottom: 17px
+		.contacts-map
+			margin: 0 0 10px 0
+			padding: 0
+		table
+			width: 100%
+			margin: 0 0 33px 0
+			padding: 0
+			border: 0
+			border-collapse: collapse
+			font-size: 15px
+			tr
+				margin: 0
+				padding: 0
+				th, td
+					line-height: 20px
+					margin: 0
+					font-weight: normal
+					text-align: left
+					vertical-align: middle
+					background: $colorWhite
+				th
+					padding: 11px 30px
+					border: 0
+				td
+					letter-spacing: 0.5px
+					position: relative
+					padding: 6px 30px 12px 30px
+					height: 59px
+					border: 2px solid $colorGrey
+					&:before, &:after
+						content: ''
+						display: block
+						height: calc(100% + 4px)
+						position: absolute
+						top: -2px
+					&:before
+						width: 3px
+						left: 0
+						background: $colorWhite
+					&:after
+						width: 2px
+						left: 3px
+						background: $colorGrey
+					&:first-child:before, &:first-child:after
+						display: none
+				&:nth-child(even)
+					td
+						background: $colorGrey
+			&.table-price
+				width: auto
+				margin-left: -30px
+				td:first-child
+					width: 490px
+		.show-all-news
+			display: block
+			margin: -17px 0 0 0
+			padding: 0
+			a
+				color: $fontColor
+				font-size: 15px
+				font-weight: bold
+				text-decoration: underline
+				&:hover
+					text-decoration: none
+		.news-date
+			margin: 0
+			padding: 0
+			font-size: 15px
+			font-weight: bold
+			color: $colorWhite
+			> span
+				display: inline-block
+				margin: 0
+				padding: 1px 5px 3px 3px
+				background: $fontColor
+		.news-title
+			margin: 18px 0 19px 0
+			padding: 0
+			font-size: 21px
+			line-height: 26px
+		.news-items
+			margin: 0
+			padding: 0
+			.item
+				display: block
+				margin: 0 0 39px 0
+				padding: 0
+				text-decoration: none
+				font-size: 15px
+				font-weight: normal
+				color: $fontColor
+				.img
+					margin: 10px 0 9px 0
+					padding: 0
+					width: 274px
+					img
+						display: block
+						max-width: 100%
+				.short-description
+					margin: 4px 0 0 0
+					padding: 0
+					line-height: 19px
+					text-decoration: underline
+					&:hover
+						text-decoration: none
+		ul.pagination
+			display: block
+			margin: 61px 0 10px 0
+			padding: 0
+			list-style: none
+			li
+				display: inline-block
+				vertical-align: middle
+				margin: 0 5px
+				padding: 0
+				&:before, &:after
+					display: none
+				a
+					display: block
+					margin: 0
+					padding: 0 6px
+					text-decoration: none
+					color: $fontColor
+					font-size: 15px
+					font-weight: bold
+					line-height: 22px
+					background-color: transparent
+				&:hover, &.current
+					a
+						color: $colorWhite
+						background: $fontColor
+				&.prev, &.next
+					margin: 0
+					a
+						text-indent: -9999px
+						background-image: $sprite
+						background-repeat: no-repeat
+						height: 18px
+					&:hover, &.disabled
+						a
+							opacity: 0.2
+				&.prev
+					margin-right: 24px
+					a
+						width: 13px
+						background-position: -3px -36px
+				&.next
+					margin-left: 24px
+					a
+						width: 14px
+						background-position: -19px -36px
+		.services-items
+			margin: -30px -30px 61px -30px
+			padding: 0
+			display: flex
+			flex-direction: row
+			flex-wrap: wrap
+			align-items: flex-start
+			justify-content: space-between
+			.item
+				display: block
+				margin: 0 0 5px 0
+				padding: 20px 30px 17px 30px
+				width: 33%
+				background: #f0f2f3
+				font-size: 15px
+				font-weight: bold
+				color: $fontColor
+				text-transform: uppercase
+				text-decoration: none
+				letter-spacing: 1.2px
+				&:hover, &.active
+					background: $fontColor
+					color: $colorWhite
+		ul
+			margin: 0 0 54px 0
+			padding: 0
+			list-style: none
+			li
+				margin: 0
+				padding: 0
+				line-height: 20px
+				&:before
+					content: ''
+					display: inline-block
+					vertical-align: middle
+					margin: 0 16px 0 0
+					padding: 0
+					background-image: $sprite
+					background-repeat: no-repeat
+					background-position: -38px -36px
+					width: 10px
+					height: 8px
